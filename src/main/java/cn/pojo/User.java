@@ -1,6 +1,7 @@
 package cn.pojo;
 
 public class User {
+<<<<<<< HEAD
 
     private Integer id;//编号
     private String username;//名称
@@ -55,4 +56,9 @@ public class User {
     public void setId(Integer id) {
         this.id = id;
     }
+=======
+    private Integer id;
+    private String userName;
+    private String userPwd;
+>>>>>>> 89778b1f8cb5bce766ba605e904f7a9b38b299b4
 }

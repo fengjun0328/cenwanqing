@@ -42,7 +42,14 @@
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
 			<tx:method name="get*" read-only="true" />
+<<<<<<< HEAD
 			<tx:method name="*" />
+=======
+			<tx:method name="del*" read-only="false"/>
+			<tx:method name="upd*" read-only="false"/>
+			<tx:method name="ins*" read-only="false"/>
+			<tx:method name="*" propagation="REQUIRED" />
+>>>>>>> 89778b1f8cb5bce766ba605e904f7a9b38b299b4
 		</tx:attributes>
 	</tx:advice>
 
