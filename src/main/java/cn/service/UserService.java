@@ -8,5 +8,6 @@ import java.util.List;
 public interface UserService {
 
     public User getUser(User user);
+    public List<User> getUser2(User user);
 
 }

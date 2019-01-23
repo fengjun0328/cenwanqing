@@ -6,11 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
         <module name="ssm_131" />
-=======
-        <module name="Xiangmu" />
->>>>>>> 89778b1f8cb5bce766ba605e904f7a9b38b299b4
       </profile>
     </annotationProcessing>
   </component>

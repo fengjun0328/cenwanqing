@@ -827,29 +827,89 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="209" parent="3" name="user">
+    <table id="209" parent="3" name="sys_department">
       <Collation>utf8_general_ci</Collation>
     </table>
-    <column id="210" parent="209" name="id">
+    <table id="210" parent="3" name="sys_position">
+      <Collation>utf8_general_ci</Collation>
+    </table>
+    <table id="211" parent="3" name="user">
+      <Collation>utf8_general_ci</Collation>
+    </table>
+    <column id="212" parent="209" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="211" parent="209" name="username">
+    <column id="213" parent="209" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="214" parent="209" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="215" parent="210" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="216" parent="210" name="NAME_CN">
+      <Position>2</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="217" parent="210" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="218" parent="211" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="219" parent="211" name="username">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="212" parent="209" name="userpwd">
+    <column id="220" parent="211" name="userpwd">
       <Position>3</Position>
       <DataType>varchar(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="213" parent="209" name="PRIMARY">
+    <column id="221" parent="211" name="bm_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="222" parent="211" name="gw_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="223" parent="211" name="STATUS">
+      <Position>6</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="224" parent="211" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

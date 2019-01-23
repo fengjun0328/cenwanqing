@@ -5,7 +5,8 @@
 <mapper namespace="cn.dao.UserMapper">
 	<select id="getUser" resultType="cn.pojo.User">
 		SELECT * FROM user where username=#{user.username} and userpwd=#{user.userpwd}
-
 	</select>
-
+	<select id="getUser2" resultType="cn.pojo.User">
+		SELECT * FROM user
+	</select>
 </mapper>

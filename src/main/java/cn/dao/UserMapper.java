@@ -9,4 +9,6 @@ public interface UserMapper {
 
     public List<User> getUser(@Param("user")User user);
 
+    public List<User> getUser2(@Param("user")User user);
+
 }
