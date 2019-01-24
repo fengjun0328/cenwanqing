@@ -8,5 +8,26 @@
 	</select>
 	<select id="getUser2" resultType="cn.pojo.User">
 		SELECT * FROM user
+		<where>
+			<if test="user.bm_id!=0 and user.bm_id!=null">
+				bm_id=#{user.bm_id}
+			</if>
+			<if test="user.gw_id!=0 and user.gw_id!=null">
+				gw_id=#{user.gw_id}
+			</if>
+			<if test="user.id!=0 and user.id!=null">
+				id=#{user.id}
+			</if>
+		</where>
 	</select>
+
+	<delete id="delid">
+		DELETE FROM `user` WHERE id=#{id}
+	</delete>
+
+	<insert id="addUser" parameterType="user">
+		INSERT INTO `user` (username, userpwd, bm_id, gw_id,`STATUS`)
+		VALUES (#{username}, #{userpwd},#{bm_id},#{gw_id}, #{status});
+	</insert>
+
 </mapper>

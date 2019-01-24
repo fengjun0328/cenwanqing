@@ -1,8 +1,10 @@
 package cn.controller;
 
+import cn.pojo.Biz_leave;
 import cn.pojo.Department;
 import cn.pojo.Position;
 import cn.pojo.User;
+import cn.service.Biz_leaveService;
 import cn.service.DepartmentService;
 import cn.service.PositionService;
 import cn.service.UserService;
@@ -27,7 +29,8 @@ public class UserController {
     private PositionService positionService;
     @Resource
     private DepartmentService departmentService;
-
+    @Resource
+    private Biz_leaveService biz_leaveService;
 
 
     @RequestMapping(value = "/index.html")
@@ -55,7 +58,6 @@ public class UserController {
     public String getUsers2(User user, Model model,
                             @RequestParam(value = "0", required = false) Integer bmId,
                             @RequestParam(value = "0", required = false) Integer gwId){
-        //User userListist=userService.getUser(user);
         List<User> userListist=userService.getUser2(user);
         List<Department> departmentList = departmentService.getDepartment();
         List<Position> positionList=positionService.getPosition();
@@ -66,5 +68,53 @@ public class UserController {
     }
 
 
+    @RequestMapping(value = "/biz.html")
+    public String getBiz(Biz_leave biz_leave,User user, Model model,
+                         @RequestParam(value = "0", required = false) Integer bmId,
+                         @RequestParam(value = "0", required = false) Integer gwId,
+                         @RequestParam(value = "0", required = false) Integer xmId){
+        List<User> userListist=userService.getUser2(user);
+        List<Department> departmentList = departmentService.getDepartment();
+        List<Position> positionList=positionService.getPosition();
+        List<Biz_leave> bizLeaves=biz_leaveService.getBiz(biz_leave);
+        model.addAttribute("userlist", userListist);
+        model.addAttribute("departmentList", departmentList);
+        model.addAttribute("positionList", positionList);
+        model.addAttribute("bizLeaves", bizLeaves);
+        return "biz";
+    }
+
+    @RequestMapping(value = "/del.html")
+    public String delid(User user,Model model,@RequestParam Integer id){
+        userService.delid(id);
+        return "redirect:/dolo.html";
+    }
+
+    @RequestMapping(value = "/delbiz.html")
+    public String delid(Biz_leave biz_leave,Model model,@RequestParam Integer id){
+        biz_leaveService.delbiz(id);
+        return "redirect:/biz.html";
+    }
+
+    /* 添加 */
+    @RequestMapping("/addNews.html")
+    public String addfight(@ModelAttribute("user") User user, Model model) {
+        List<Position> position = positionService.getPosition();
+        List<Department> departments = departmentService.getDepartment();
+        model.addAttribute("departments", departments);
+        model.addAttribute("position", position);
+        return "useradd";
+    }
+
+    @RequestMapping(value = "/useradd.html", method = RequestMethod.POST)
+    public String add(User user, Model model) {
+        System.out.println(3333333);
+        if (userService.addUser(user)) {
+            System.out.println("添加成功！！！");
+            return "redirect:/dolo.html";
+        }
+        System.out.println("添加失败！！！");
+        return "useradd";
+    }
 
 }

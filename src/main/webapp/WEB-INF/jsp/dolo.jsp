@@ -20,6 +20,7 @@
                         <c:forEach items="${departmentList}" var="d">
                         <option value="${d.id }">${d.name }</option>
                         </c:forEach>
+                    </select>
                     </td></tr>
                     <tr><td colspan="1.5">
                         岗位：<select name="gwId" id="gwId">
@@ -27,14 +28,18 @@
                         <c:forEach items="${positionList}" var="p">
                         <option value="${p.id }">${p.name_cn }</option>
                         </c:forEach>
+                    </select>
                     </td></tr>
                 </table>
-            </select> <input type="submit" value="查询">
+             <input type="submit" value="查询">
             </form>
         </td>
         <td colspan="1">
             <form action="${pageContext.request.contextPath }/addNews.html">
                 <input type="submit" value="添加" />
+            </form>
+            <form action="${pageContext.request.contextPath }/biz.html">
+                <input type="submit" value="查看请假" />
             </form>
         </td>
     </tr>
@@ -44,8 +49,8 @@
         <td>编号</td>
         <td>姓名</td>
         <td>密码</td>
-        <%--<td>岗位</td>
-        <td>部门</td>--%>
+        <td>岗位</td>
+        <td>部门</td>
         <td>在职情况</td>
         <td>操作</td>
     </tr>
@@ -53,13 +58,12 @@
         <tr>
             <td>${user.id}</td>
             <td>${user.username}</td>
-            <%--<td>${user.author}</td>
-            <td>${user.author}</td>--%>
             <td>${user.userpwd}</td>
+            <td>${user.gw_id}</td>
+            <td>${user.bm_id}</td>
             <td>${user.status}</td>
             <td>
-                <a href="#">修改</a>
-                <a href="#">删除</a>
+                <a href="${pageContext.request.contextPath }/del.html?id=${user.id}">删除</a>
             </td>
         </tr>
     </c:forEach>

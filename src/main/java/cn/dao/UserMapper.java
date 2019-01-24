@@ -11,4 +11,8 @@ public interface UserMapper {
 
     public List<User> getUser2(@Param("user")User user);
 
+    public boolean delid(Integer id);
+
+    public boolean addUser(User user);
+
 }

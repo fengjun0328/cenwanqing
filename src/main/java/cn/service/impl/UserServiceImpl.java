@@ -25,7 +25,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getUser2(User user) {
-        return userMapper.getUser(user);
+        return userMapper.getUser2(user);
+    }
+
+    @Override
+    public boolean delid(Integer id) {
+        return userMapper.delid(id);
+    }
+
+    @Override
+    public boolean addUser(User user) {
+        return userMapper.addUser(user);
     }
 
 }

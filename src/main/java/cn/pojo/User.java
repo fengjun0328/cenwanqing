@@ -7,7 +7,7 @@ public class User {
     private String userpwd;//密码
     private Integer bm_id;//部门ID
     private Integer gw_id;//部门ID
-    private String status;//密码
+    private String status;//在职情况
 
     public Integer getBm_id() {
         return bm_id;
