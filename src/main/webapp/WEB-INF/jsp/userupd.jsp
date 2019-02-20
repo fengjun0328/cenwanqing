@@ -5,23 +5,23 @@
 <html>
 <head>
 
-<title>添加员工</title>
+<title>修改员工</title>
 
 
 </head>
 
 <body>
 
-	<form action="${pageContext.request.contextPath }/useradd.html"
+	<form action="${pageContext.request.contextPath }/userupd.html"
 		method="post">
 
 		<div>
 			<table border="1" cellpadding="0" cellspacing="0" align="center">
 				<tr>
-					<td><h1>新员工</h1> <br /></td>
+					<td><h1>修改员工信息</h1> <br /></td>
 				</tr>
 				<tr>
-					<td>岗位：<select name="gw_id">
+					<td>岗位：<select name="${gw_id}">
 						<option value="1">请选择</option>
 						<option value="1">员工</option>
 						<option value="2">部门经理</option>
@@ -32,7 +32,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>部门：<select name="bm_id">
+					<td>部门：<select name="${bm_id}">
 						<option value="1">请选择</option>
 						<option value="1">人事部</option>
 						<option value="2">平台研发部</option>
@@ -44,15 +44,15 @@
 					</td>
 				</tr>
 				<tr>
-					<td>姓名：<input type="text" name="username" />
+					<td>姓名：<input type="text" name="${username}" />
 					</td>
 				</tr>
 				<tr>
-					<td>密码：<input type="text" name="userpwd" />
+					<td>密码：<input type="text" name="${userpwd}" />
 					</td>
 				</tr>
 				<tr>
-					<td>在职情况：岗位：<select name="status">
+					<td>在职情况：岗位：<select name="${status}">
 							<option value="在职">请选择</option>
 							<option value="在职">在职</option>
 							<option value="离职">离职</option>
@@ -60,7 +60,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="添加" /> <a href="dolo.html">返回</a>
+					<td><input type="submit" value="提交" /> <a href="dolo.html">返回</a>
 					</td>
 				</tr>
 			</table>

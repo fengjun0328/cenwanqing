@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dao.FinancialMapper">
+	<select id="getFinancial" resultType="cn.pojo.Financial">
+		SELECT * FROM `financial`;
+	</select>
+
+	<delete id="delFinancial">
+		DELETE FROM `financial` WHERE id=#{id}
+	</delete>
+
+	<insert id="addFinancial" parameterType="financial">
+		INSERT INTO financial (xm_id, CHECK_TIME, rw, goqian,jindu, MODIFY_TIME)
+		VALUES (#{xm_id}, #{check_time},#{rw},#{goqian}, #{jindu},#{modify_time});
+	</insert>
+
+</mapper>

@@ -21,6 +21,13 @@
 		</where>
 	</select>
 
+	<!-- 根据id查找单个用户 -->
+	<select id="getid" parameterType="int" resultType="User">
+		select * from user where id=#{id}
+	</select>
+
+
+
 	<delete id="delid">
 		DELETE FROM `user` WHERE id=#{id}
 	</delete>
@@ -29,5 +36,12 @@
 		INSERT INTO `user` (username, userpwd, bm_id, gw_id,`STATUS`)
 		VALUES (#{username}, #{userpwd},#{bm_id},#{gw_id}, #{status});
 	</insert>
+
+	<!-- 修改 -->
+	<update id="updUser" parameterType="user">
+		UPDATE user SET
+						username=#{username}, userpwd=#{userpwd}, bm_id=#{bm_id}, gw_id=#{gw_id},`STATUS`=#{status}
+		WHERE id=#{id}
+	</update>
 
 </mapper>

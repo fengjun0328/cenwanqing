@@ -20,6 +20,11 @@ public class Biz_leaveServiceImpl implements Biz_leaveService {
     }
 
     @Override
+    public boolean bizadd(Biz_leave biz_leave) {
+        return biz_leaveMapper.bizadd(biz_leave);
+    }
+
+    @Override
     public boolean delbiz(Integer id) {
         return biz_leaveMapper.delbiz(id);
     }

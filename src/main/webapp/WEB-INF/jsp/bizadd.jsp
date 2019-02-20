@@ -12,13 +12,13 @@
 
 <body>
 
-	<form action="${pageContext.request.contextPath }/useradd.html"
+	<form action="${pageContext.request.contextPath }/bizadd.html"
 		method="post">
 
 		<div>
 			<table border="1" cellpadding="0" cellspacing="0" align="center">
 				<tr>
-					<td><h1>新员工</h1> <br /></td>
+					<td><h1>新请假条</h1> <br /></td>
 				</tr>
 				<tr>
 					<td>岗位：<select name="gw_id">
@@ -44,23 +44,39 @@
 					</td>
 				</tr>
 				<tr>
-					<td>姓名：<input type="text" name="username" />
-					</td>
-				</tr>
-				<tr>
-					<td>密码：<input type="text" name="userpwd" />
-					</td>
-				</tr>
-				<tr>
-					<td>在职情况：岗位：<select name="status">
-							<option value="在职">请选择</option>
-							<option value="在职">在职</option>
-							<option value="离职">离职</option>
+					<td>姓名：<select name="xm_id">
+						<option value="1">请选择</option>
+						<option value="1">admin</option>
+						<option value="2">liyihao</option>
+						<option value="3">bdqn</option>
+						<option value="4">李小伟</option>
+						<option value="5">张平</option>
+						<option value="6">叶宁</option>
+						<option value="7">李伟</option>
+						<option value="8">王小明</option>
+						<option value="9">林风</option>
 					</select>
 					</td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="添加" /> <a href="index.html">返回</a>
+					<td>请假条：<input type="text" name="qingjia" />
+					</td>
+				</tr>
+				<tr>
+					<td>理由：<input type="text" name="liyou" />
+					</td>
+				</tr>
+				<tr>
+					<td>是否通过：<select name="sfty">
+						<option value="待审核">请选择</option>
+						<option value="同意">同意</option>
+						<option value="拒绝">拒绝</option>
+						<option value="待审核">待审核</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="添加" /> <a href="biz.html">返回</a>
 					</td>
 				</tr>
 			</table>

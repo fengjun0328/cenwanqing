@@ -7,6 +7,11 @@
 		SELECT * FROM `BIZ_LEAVE`;
 	</select>
 
+	<insert id="bizadd" parameterType="biz_leave">
+		INSERT INTO `BIZ_LEAVE` (xm_id,STARTTIME,ENDTIME,bm_id,gw_id,qingjia,liyou,sfty,pjshijian)
+		VALUES (#{xm_id}, #{starttime},#{endtime},#{bm_id}, #{gw_id}, #{qingjia},#{liyou},#{sfty}, #{pjshijian});
+	</insert>
+
 	<delete id="delbiz">
 		DELETE FROM `BIZ_LEAVE` WHERE id=#{id}
 	</delete>

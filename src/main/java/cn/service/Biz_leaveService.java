@@ -10,4 +10,6 @@ public interface Biz_leaveService {
 
     public boolean delbiz(Integer id);
 
+    public boolean bizadd(Biz_leave biz_leave);
+
 }

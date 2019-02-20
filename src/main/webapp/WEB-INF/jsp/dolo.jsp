@@ -11,10 +11,10 @@
         <td rowspan="1" colspan="6">JBOA办公</td>
     </tr>
     <tr>
-        <td colspan="4">
+        <td colspan="6">
             <form action="${pageContext.request.contextPath }/dolo.html">
                 <table>
-                    <tr><td colspan="1.5">
+                    <tr><td>
                         部门：<select name="bmId" id="bmId">
                         <option value="0">全部</option>
                         <c:forEach items="${departmentList}" var="d">
@@ -22,7 +22,7 @@
                         </c:forEach>
                     </select>
                     </td></tr>
-                    <tr><td colspan="1.5">
+                    <tr><td>
                         岗位：<select name="gwId" id="gwId">
                         <option value="0">全部</option>
                         <c:forEach items="${positionList}" var="p">
@@ -40,6 +40,9 @@
             </form>
             <form action="${pageContext.request.contextPath }/biz.html">
                 <input type="submit" value="查看请假" />
+            </form>
+            <form action="${pageContext.request.contextPath }/caiwu.html">
+                <input type="submit" value="财务信息" />
             </form>
         </td>
     </tr>
@@ -63,6 +66,7 @@
             <td>${user.bm_id}</td>
             <td>${user.status}</td>
             <td>
+                <a href="${pageContext.request.contextPath }/userupd.html?id=${user.id}">修改</a>
                 <a href="${pageContext.request.contextPath }/del.html?id=${user.id}">删除</a>
             </td>
         </tr>

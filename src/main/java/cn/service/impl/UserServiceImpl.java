@@ -38,4 +38,16 @@ public class UserServiceImpl implements UserService {
         return userMapper.addUser(user);
     }
 
+    @Override
+    public User getid(Integer id) {
+        User user = userMapper.getid(id);
+        return user;
+    }
+
+
+    @Override
+    public boolean updUser(User user) {
+        return userMapper.updUser(user);
+    }
+
 }

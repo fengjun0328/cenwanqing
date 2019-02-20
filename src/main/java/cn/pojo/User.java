@@ -9,6 +9,11 @@ public class User {
     private Integer gw_id;//部门ID
     private String status;//在职情况
 
+    public User() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
     public Integer getBm_id() {
         return bm_id;
     }

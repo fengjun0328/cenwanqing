@@ -11,7 +11,7 @@
         <td rowspan="1" colspan="10">JBOA办公</td>
     </tr>
     <tr>
-        <td colspan="9">
+        <%--<td colspan="9">
             <form action="${pageContext.request.contextPath }/biz.html">
                 <table align="center">
                     <tr><td>
@@ -42,16 +42,16 @@
                 </table>
                  <input type="submit" value="查询">
             </form>
-        </td>
-        <td colspan="1">
-            <form action="${pageContext.request.contextPath }/bizadd.html">
+        </td>--%>
+        <td colspan="10">
+            <form action="${pageContext.request.contextPath }/caiwuadd.html">
                 <input type="submit" value="添加" />
             </form>
             <form action="${pageContext.request.contextPath }/dolo.html">
             <input type="submit" value="用户列表" />
         </form>
-            <form action="${pageContext.request.contextPath }/caiwu.html">
-                <input type="submit" value="财务信息" />
+            <form action="${pageContext.request.contextPath }/biz.html">
+                <input type="submit" value="请假列表" />
             </form>
         </td>
     </tr>
@@ -59,34 +59,25 @@
 
     <tr>
         <td>编号</td>
-        <td>姓名</td>
-        <td>请假时间</td>
-        <td>请假到期</td>
-        <td>部门</td>
-        <td>岗位</td>
-        <td>请假条</td>
-        <td>理由</td>
-        <td>是否同意</td>
-        <td>批假时间</td>
+        <td>姓名ID</td>
+        <td>申请时间</td>
+        <td>任务</td>
+        <td>打款</td>
+        <td>进度</td>
+        <td>结束时间</td>
         <td>操作</td>
     </tr>
-    <c:forEach items="${bizLeaves }" var="b" varStatus="vs">
+    <c:forEach items="${financials }" var="f" varStatus="vs">
         <tr>
-            <td>${b.id}</td>
-            <td>${b.xm_id}</td>
-            <td><fmt:formatDate value="${b.starttime}"
-                                pattern="yyyy-MM-dd" /></td>
-            <td><fmt:formatDate value="${b.endtime}"
-                                pattern="yyyy-MM-dd" /></td>
-            <td>${b.bm_id}</td>
-            <td>${b.gw_id}</td>
-            <td>${b.qingjia}</td>
-            <td>${b.liyou}</td>
-            <td>${b.sfty}</td>
-            <td><fmt:formatDate value="${b.pjshijian}"
-                                pattern="yyyy-MM-dd" /></td>
+            <td>${f.id}</td>
+            <td>${f.xm_id}</td>
+            <td><fmt:formatDate value="${f.check_time}" pattern="yyyy-MM-dd" /></td>
+            <td>${f.rw}</td>
+            <td>${f.goqian}</td>
+            <td>${f.jindu}</td>
+            <td><fmt:formatDate value="${f.modify_time}" pattern="yyyy-MM-dd" /></td>
             <td>
-                <a href="${pageContext.request.contextPath }/delbiz.html?id=${b.id}">删除</a>
+                <a href="${pageContext.request.contextPath }/delcaiwu.html?id=${f.id}">删除</a>
             </td>
         </tr>
     </c:forEach>
